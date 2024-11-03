@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import Homepage from './pages/Homepage';
 import Product from './pages/Product';
 import Pricing from './pages/Pricing';
@@ -48,7 +48,7 @@ function App(){
             <Route path="product" element={<Product />} />
             <Route path="pricing" element={<Pricing />} />
             <Route path="app" element={<AppLayout />} >
-            <Route index  element={<CityList cities={cities} isLoading={isLoading} />} />
+            <Route index  element={<Navigate replace to="cities" />} />
             {/* Index means by default cities show on screenn */}
             <Route  path="cities" element={<CityList  cities={cities} isLoading={isLoading} />} />
             {/* Here we create a new Route for storing state in Url. For this first of all create new Route and link to it route. */}
