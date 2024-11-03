@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
 import City from './components/City';
+import Form from './components/Form';
 
 
 import { useEffect, useState } from "react";
@@ -53,7 +54,7 @@ function App(){
             {/* Here we create a new Route for storing state in Url. For this first of all create new Route and link to it route. */}
              <Route  path="cities/:id" element={<City/>} />
             <Route  path="countries" element={<CountryList cities={cities} isLoading={isLoading}  />} />
-            <Route  path="form" element={<p>Form</p>} />
+            <Route  path="form" element={<Form />} />
             
             </Route>
            
