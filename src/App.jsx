@@ -7,6 +7,8 @@ import PageNotFound from './pages/PageNotFound';
 import Login from './pages/Login';
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
+import City from './components/City';
+
 
 import { useEffect, useState } from "react";
 
@@ -48,6 +50,8 @@ function App(){
             <Route index  element={<CityList cities={cities} isLoading={isLoading} />} />
             {/* Index means by default cities show on screenn */}
             <Route  path="cities" element={<CityList  cities={cities} isLoading={isLoading} />} />
+            {/* Here we create a new Route for storing state in Url. For this first of all create new Route and link to it route. */}
+             <Route  path="cities/:id" element={<City/>} />
             <Route  path="countries" element={<CountryList cities={cities} isLoading={isLoading}  />} />
             <Route  path="form" element={<p>Form</p>} />
             
