@@ -19,8 +19,10 @@ import styles from './CityList.module.css';
 // import Spinner from './Spinner';
 import CityItem from './CityItem'; // Import CityItem
 import Message from './Message';
+import { ContextConsume } from '../Contexts/PostContext';
 
-function CityList({ cities }) {
+function CityList() {
+    const {cities}= ContextConsume();
     // if (isLoading) return <Spinner />;
 
     if(!cities.length) return (

@@ -2,8 +2,10 @@ import PropTypes from 'prop-types'; // Import PropTypes for validation
 import styles from './CountryList.module.css';
 import CountryItem from './CountryItem'; // Import CountryItem
 import Message from './Message';
+import { ContextConsume } from '../Contexts/PostContext';
 
-function CountryList({ cities }) {
+function CountryList() {
+    const {cities} = ContextConsume();
     if (!cities.length) return (
         <Message message="Add Your First City by Clicking on a city map" />
     );
